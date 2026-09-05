@@ -1,0 +1,19 @@
+const row = 3, col = 3;
+
+const rows = Array.from( { length: row }, (_, i) => Array.from ( { length: col }, (_, j) => [i, j]));
+const cols = Array.from( { length: col }, (_, j) => Array.from ( { length: row }, (_, i) => [i, j]));
+const diags = [
+    Array.from( { length: row }, (_, i) => [i, i] ),
+    Array.from( { length: row }, (_, i) => [i, row - i - 1] )
+];
+
+const winningConditions = [...rows, ...cols, ...diags];
+
+// check for win condition
+const checkWin = (player) => {
+    // use a hash set to store the winning conditions and check if filtered board matches
+    // use .some and .any to check this
+    winningConditions.some()
+    // if match, then end the game (console log winner and send a signal to clear board?)
+    // if win conditions are not met but board is full, then also clear board, is a tie
+};
